@@ -1,5 +1,5 @@
 name: ESP32
- 
+
 # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#onschedule
 # add something
 on:
@@ -20,8 +20,6 @@ jobs:
 
       - name: Build ESP32-MICROLITE No SPIRAM - 4MB Flash
         run: |
-          mv * ..
-          cd ..
           source ./scripts/build.sh && prepare_dependencies
           source ./dependencies/micropython/tools/ci.sh && ci_esp32_idf50_setup
           echo "BUILDING MICROLITE"
