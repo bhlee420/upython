@@ -1,0 +1,6 @@
+.idea
+build
+lib/*.a
+micropython-modules/microlite/tflm
+dependencies
+esp-idf

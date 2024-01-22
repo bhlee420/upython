@@ -1,0 +1,61 @@
+name: UNIX
+
+# https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#onschedule
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/build_unix.yml'
+      - "micropython-modules/microlite/**"
+      - "micropython-modules/micropython-camera-driver/**"
+
+jobs:
+  tensorflow_micropython_unix_build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
+
+      - name: Install Pillow & Wave
+        run: |
+          pip install Pillow
+          pip3 install Wave
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Prepare to Build Tensorflow Micropython Firmware for UNIX
+        run: |
+          mv * ..
+          cd ..
+          source ./scripts/build.sh && prepare_dependencies
+
+      - name: Setup Build for Tensorflow
+        run: |
+
+          echo "Regenerating microlite/tfm directory"
+          rm -rf ./micropython-modules/microlite/tflm
+
+          cd ./dependencies/tflite-micro
+
+          ../../scripts/prepare-tflm-unix.sh
+
+          cd ../../micropython-modules
+          ln -s ../depenencies/micropython-ulab/code ulab
+ 
+          cd ./dependencies/micropython
+          echo "make -C mpy-cross V=1 clean all"
+          make -C mpy-cross V=1 clean all
+          cd ports/unix
+          make submodules
+          make deplibs
+
+          make VARIANT_DIR=../../../../boards/unix/microlite-variant VARIANT=microlite
+         
+      - name: Archive Unix MICROLITE micropython interpreter
+        uses: actions/upload-artifact@v2
+        with:
+          name: microlite-unix-micropython
+          path: /home/runner/work/tensorflow-micropython-examples/dependencies/micropython/ports/unix/micropython
