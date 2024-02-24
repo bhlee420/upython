@@ -7,19 +7,19 @@ on:
   push:
   pull_request:
     paths:
-      - ".github/workflows/build_esp32.yml"
+      - ".github/workflows/build_esp32s3.yml"
       - "micropython-modules/microlite/**"
       - "micropython-modules/micropython-camera-driver/**"
       
 
 jobs:
-  tensorflow_micropython_esp32_build:
+  tensorflow_micropython_esp32s3_build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Build ESP32-MICROLITE No SPIRAM - 4MB Flash
+      - name: Build ESP32S3-MICROLITE SPIRAM - 8MB Flash
         run: |
           source ./scripts/build.sh && prepare_dependencies
           echo "CODECONTENTS=$(cat ./dependencies/micropython/tools/ci.sh)"
@@ -37,6 +37,6 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: microlite-esp32-firmware
-          path: /home/runner/work/upython/upython/dependencies/micropython/ports/esp32/build-MICROLITE_S3_SPIRAM/firmware.bin
+          path: /home/runner/work/upython/upython/dependencies/micropython/ports/esp32/build-MICROLITE_S3_SPIRAM/firmware_s3.bin
 
     
