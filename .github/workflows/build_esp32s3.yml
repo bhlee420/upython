@@ -36,6 +36,6 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: microlite-esp32-firmware
-          path: /home/runner/work/micropython_tflite/micropython_tflite/dependencies/micropython/ports/esp32/build-MICROLITE/firmware.bin
+          path: /home/runner/work/micropython_tflite/micropython_tflite/dependencies/micropython/ports/esp32/build-MICROLITE_S3_SPIRAM/firmware.bin
 
     
