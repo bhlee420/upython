@@ -20,7 +20,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Build ESP32-MICROLITE No SPIRAM - 4MB Flash
+      - name: Build ESP32-MICROLITE No SPIRAM - 8MB Flash
         run: |
           source ./scripts/build.sh && prepare_dependencies
           echo "CODECONTENTS=$(cat ./dependencies/micropython/tools/ci.sh)"
