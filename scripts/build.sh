@@ -59,6 +59,8 @@ function build_esp32 {
 	    exit 1;
     fi
     pwd
+    echo "Board="
+    echo $BOARD
     python --version
     which python
     # xargs --show-limits
