@@ -59,16 +59,30 @@ function build_esp32 {
 	    exit 1;
     fi
     pwd
-    echo "Board="
-    echo $BOARD
     python --version
     which python
     # xargs --show-limits
     source esp-idf/export.sh
+
+    echo "source esp-idf/export.sh !!!!"
+    
+    pwd
+    
     cd dependencies/micropython
+    
+    pwd
+    
     make ${MAKEOPTS} -C mpy-cross
+    
+    pwd
+    
     cd ports/esp32
     make ${MAKEOPTS} submodules
+    
+    pwd
+  
+    echo "make submodules !!!!"
+    pwd
     
     PWD=$(pwd)
     echo "make ${MAKEOPTS} V=1 BOARD_DIR=$(pwd)/../../../../boards/esp32/${BOARD} BOARD=${BOARD} FROZEN_MANIFEST=$PWD/boards/manifest.py"
@@ -76,6 +90,10 @@ function build_esp32 {
     make ${MAKEOPTS} V=1 \
         BOARD_DIR=$(pwd)/../../../../boards/esp32/${BOARD} \
         BOARD=${BOARD} 
+    
+    echo "make V=1 !!!!"
+    pwd
+    
 
     # creates the build into dependencies/micropython/ports/esp32/build-MICROLITE
     # find build-${BOARD} -ls
