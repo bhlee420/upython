@@ -1,5 +1,7 @@
 set(IDF_TARGET esp32s3)
 
+message (STATUS "LEE : MICROPY_PORT_DIR=${MICROPY_PORT_DIR}")
+
 set(SDKCONFIG_DEFAULTS
 
     ${MICROPY_PORT_DIR}/boards/sdkconfig.base
