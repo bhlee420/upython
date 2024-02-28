@@ -63,32 +63,21 @@ function build_esp32 {
     which python
     # xargs --show-limits
     source esp-idf/export.sh
-
-    echo "source esp-idf/export.sh !!!!"
-    
-    pwd
-    
     cd dependencies/micropython
+    make -C mpy-cross V=1 clean all
     
-    pwd
-    
-    make ${MAKEOPTS} -C mpy-cross
-    
-    pwd
-    
-    cd ports/esp32
-    make ${MAKEOPTS} submodules
-    
-    pwd
-  
+    source esp-idf/export.sh
+
     echo "make submodules !!!!"
     pwd
     
     PWD=$(pwd)
     echo "make ${MAKEOPTS} V=1 BOARD_DIR=$(pwd)/../../../../boards/esp32/${BOARD} BOARD=${BOARD} FROZEN_MANIFEST=$PWD/boards/manifest.py"
 
+    cd $(pwd)/../../../../boards/esp32/${BOARD}
+    
     make ${MAKEOPTS} V=1 \
-        BOARD_DIR=$(pwd)/../../../../boards/esp32/${BOARD} \
+        BOARD_DIR=$(pwd) \
         BOARD=${BOARD} 
     
     echo "make V=1 !!!!"
