@@ -65,10 +65,11 @@ function build_esp32 {
     source esp-idf/export.sh
     cd dependencies/micropython
     make -C mpy-cross V=1 clean all
+    cd boards/esp32
     make submodules
 
     echo "LEE PROMPT : cd ../../boards/esp32/${BOARD}"
-    cd ../../boards/esp32/${BOARD}
+    cd ../../../../boards/esp32/${BOARD}
 
     echo "LEE PROMPT : BUILDING ${BOARD}.."
     idf.py clean build
