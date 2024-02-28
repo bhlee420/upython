@@ -72,7 +72,7 @@ function build_esp32 {
     cd ../../../../boards/esp32/${BOARD}
 
     echo "LEE PROMPT : BUILDING ${BOARD}.."
-    idf.py set-target esp32s3
+    #idf.py set-target esp32s3
     #idf.py add-dependency espressif/esp_tinyusb
     idf.py clean build
 
