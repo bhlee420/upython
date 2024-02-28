@@ -71,10 +71,8 @@ function build_esp32 {
     PWD=$(pwd)
     echo "make ${MAKEOPTS} V=1 BOARD_DIR=$(pwd)/../../../../boards/esp32/${BOARD} BOARD=${BOARD} FROZEN_MANIFEST=$PWD/boards/manifest.py"
 
-    cd $(pwd)/../../../../boards/esp32/${BOARD}
-
     make ${MAKEOPTS} V=1 \
-        BOARD_DIR=$(pwd) \
+        BOARD_DIR= $(pwd)/../../../../boards/esp32/${BOARD} \
         BOARD=${BOARD} 
 
     # creates the build into dependencies/micropython/ports/esp32/build-MICROLITE
