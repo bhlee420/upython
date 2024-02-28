@@ -64,19 +64,26 @@ function build_esp32 {
     # xargs --show-limits
     source esp-idf/export.sh
     cd dependencies/micropython
-    make ${MAKEOPTS} -C mpy-cross
+    make -C mpy-cross V=1 clean all
+
+    echo "LEE PROMPT : cd ../../boards/esp32/${BOARD}
+    cd ../../boards/esp32/${BOARD}
+
+    echo "LEE PROMPT : BUILDING ${BOARD}.."
+    idf.py clean build
+
     
-    PWD=$(pwd)
-    echo "make ${MAKEOPTS} V=1 BOARD_DIR=$(pwd)/../../../../boards/esp32/${BOARD} BOARD=${BOARD} FROZEN_MANIFEST=$PWD/boards/manifest.py"
+    #PWD=$(pwd)
+    #echo "make ${MAKEOPTS} V=1 BOARD_DIR=$(pwd)/../../../../boards/esp32/${BOARD} BOARD=${BOARD} FROZEN_MANIFEST=$PWD/boards/manifest.py"
 
     #make clean all
-    make ${MAKEOPTS} V=1 \
-        BOARD_DIR= $(pwd)/../../../../boards/esp32/${BOARD} \
-        BOARD=${BOARD} 
+    #make ${MAKEOPTS} V=1 \
+        #BOARD_DIR= $(pwd)/../../../../boards/esp32/${BOARD} \
+        #BOARD=${BOARD} 
 
     # creates the build into dependencies/micropython/ports/esp32/build-MICROLITE
     # find build-${BOARD} -ls
-    cd ../../../..
+    #cd ../../../
 }
 
 
