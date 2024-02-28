@@ -65,13 +65,11 @@ function build_esp32 {
     source esp-idf/export.sh
     cd dependencies/micropython
     make ${MAKEOPTS} -C mpy-cross
-    cd ports/esp32
-    make ${MAKEOPTS} submodules
     
     PWD=$(pwd)
     echo "make ${MAKEOPTS} V=1 BOARD_DIR=$(pwd)/../../../../boards/esp32/${BOARD} BOARD=${BOARD} FROZEN_MANIFEST=$PWD/boards/manifest.py"
 
-    make clean all
+    #make clean all
     make ${MAKEOPTS} V=1 \
         BOARD_DIR= $(pwd)/../../../../boards/esp32/${BOARD} \
         BOARD=${BOARD} 
