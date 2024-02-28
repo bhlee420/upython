@@ -66,7 +66,7 @@ function build_esp32 {
     cd dependencies/micropython
     make -C mpy-cross V=1 clean all
 
-    echo "LEE PROMPT : cd ../../boards/esp32/${BOARD}
+    echo "LEE PROMPT : cd ../../boards/esp32/${BOARD}"
     cd ../../boards/esp32/${BOARD}
 
     echo "LEE PROMPT : BUILDING ${BOARD}.."
