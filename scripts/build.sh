@@ -74,6 +74,7 @@ function build_esp32 {
     echo "LEE PROMPT : BUILDING ${BOARD}.."
     #idf.py set-target esp32s3
     #idf.py add-dependency espressif/esp_tinyusb
+    idf.py add-dependency "espressif/esp_tinyusb^1.4.3"
     rm -rf builds
     idf.py clean build
 
