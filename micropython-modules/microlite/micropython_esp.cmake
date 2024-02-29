@@ -39,7 +39,7 @@ target_sources(microlite INTERFACE
     ${CMAKE_CURRENT_LIST_DIR}/python_ops_resolver.cc
 )
 
-get_filename_component(TENSORFLOW_DIR ${CMAKE_CURRENT_LIST_DIR}/../../dependencies/esp-tflite-micro/components/esp-tflite-micro/tensorflow/lite ABSOLUTE)
+get_filename_component(TENSORFLOW_DIR ${CMAKE_CURRENT_LIST_DIR}/../../dependencies/esp-tflite-micro/components/esp-tflite-micro ABSOLUTE)
 get_filename_component(TENSORFLOW_THIRD_PARTY_DIR ${CMAKE_CURRENT_LIST_DIR}/../../dependencies/esp-tflite-micro/components/esp-tflite-micro/third_party ABSOLUTE)
 
 set (FLATBUFFERS_DIR ${TENSORFLOW_THIRD_PARTY_DIR}/flatbuffers/include)
