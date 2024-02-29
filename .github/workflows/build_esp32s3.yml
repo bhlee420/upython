@@ -23,7 +23,7 @@ jobs:
         run: |
           source ./scripts/build.sh && prepare_dependencies
           echo "CODECONTENTS=$(cat ./dependencies/micropython/tools/ci.sh)"
-          source ./dependencies/micropython/tools/ci.sh && ci_esp32_idf_setup
+          source ./dependencies/micropython/tools/ci.sh && ci_esp32_idf50_setup
           echo "Setup idf"
           pwd
           source ./scripts/build.sh && build_esp32 "MICROLITE_S3_SPIRAM"
