@@ -29,7 +29,7 @@ function prepare_dependencies {
     git clone --depth 1 https://github.com/micropython/micropython --branch $MICRO_PYTHON_VERSION
 
     # esp32 - https://github.com/mocleiri/tensorflow-micropython-examples.git
-    git clone --depth 1 https://github.com/espressif/tflite-micro-esp-examples --branch $ESP32_TFLITE_VERSION
+    git clone --depth 1 https://github.com/espressif/esp-tflite-micro --branch $ESP32_TFLITE_VERSION
 
     # esp32-camera actually comes through esp package manager but we need it for the headers
     git clone --depth 1 https://github.com/espressif/esp32-camera --branch master
