@@ -75,6 +75,7 @@ function build_esp32 {
     idf.py add-dependency "espressif/mdns^1.2.4"
     idf.py add-dependency "esp_tinyusb^1.0.0"
     rm -rf builds
+    echo $(pwd)
     idf.py -B ../../../dependencies/micropython/ports/esp32/build-${BOARD} build
 
     cd ../../../
