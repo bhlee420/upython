@@ -17,8 +17,8 @@ function prepare_dependencies {
     cd dependencies
 
     ULAB_VERSION=6.0.12
-    MICRO_PYTHON_VERSION=v1.21.0
-    #MICRO_PYTHON_VERSION=master
+    #MICRO_PYTHON_VERSION=v1.21.0
+    MICRO_PYTHON_VERSION=master
     MICROPYTHON_ESP32_CAMERA_DRIVER=master
     ESP32_TFLITE_VERSION=v1.0.0
 
