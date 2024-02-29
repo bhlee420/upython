@@ -47,7 +47,7 @@ CONFIG_LWIP_PPP_CHAP_SUPPORT=y
 
 # tinyUSB
 CONFIG_TINYUSB_CDC_ENABLED=y
-
+CONFIG_MBEDTLS_PLATFORM_TIME_ALT=y
 
 # SSL
 # Use 4kiB output buffer instead of default 16kiB
