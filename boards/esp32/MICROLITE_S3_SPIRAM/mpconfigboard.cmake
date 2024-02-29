@@ -4,7 +4,7 @@ message (STATUS "LEE : MICROPY_PORT_DIR=${MICROPY_PORT_DIR}")
 
 set(SDKCONFIG_DEFAULTS
 
-    ${MICROPY_PORT_DIR}/boards/sdkconfig.base
+    ${MICROPY_BOARD_DIR}/boards/sdkconfig.base
     ${MICROPY_PORT_DIR}/boards/sdkconfig.ble
     ${MICROPY_PORT_DIR}/boards/sdkconfig.spiram_sx
     ${MICROPY_PORT_DIR}/boards/sdkconfig.240mhz
