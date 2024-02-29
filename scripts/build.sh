@@ -77,7 +77,7 @@ function build_esp32 {
     rm -rf builds
     idf.py clean build
 
-    
+    cd ../../../
     #PWD=$(pwd)
     #echo "make ${MAKEOPTS} V=1 BOARD_DIR=$(pwd)/../../../../boards/esp32/${BOARD} BOARD=${BOARD} FROZEN_MANIFEST=$PWD/boards/manifest.py"
 
