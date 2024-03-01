@@ -29,14 +29,8 @@ jobs:
           echo "TARGET=$TARGET"
           ./scripts/assemble-unified-image-esp.sh $TARGET "MICROLITE"
           ls $TARGET/build-MICROLITE
-        shell: bash
-
-      - name: Archive ESP32-MICROLITE - 4 MB Flash firmware
-        uses: actions/upload-artifact@v3
-        with:
-          name: microlite-esp32-firmware
-          path: /home/runner/work/upython/upython/dependencies/micropython/ports/esp32/build-MICROLITE/firmware.bin
-     
+   
+      
       - name: Build ESP32-MICROLITE No SPIRAM - 4MB Flash(CAM)
         run: |
           echo "BUILDING MICROLITE_SPIRAM_CAM"
@@ -45,7 +39,15 @@ jobs:
           echo "TARGET=$TARGET"
           ./scripts/assemble-unified-image-esp.sh $TARGET "MICROLITE_SPIRAM_CAM"
           ls $TARGET/build-MICROLITE_SPIRAM_CAM
+      
         shell: bash
+
+      - name: Archive ESP32-MICROLITE - 4 MB Flash firmware
+        uses: actions/upload-artifact@v3
+        with:
+          name: microlite-esp32-firmware
+          path: /home/runner/work/upython/upython/dependencies/micropython/ports/esp32/build-MICROLITE/firmware.bin
+     
 
       - name: Archive ESP32-MICROLITE - 4 MB Flash firmware(CAM)
         uses: actions/upload-artifact@v3
