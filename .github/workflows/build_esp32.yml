@@ -37,7 +37,7 @@ jobs:
           name: microlite-esp32-firmware
           path: /home/runner/work/upython/upython/dependencies/micropython/ports/esp32/build-MICROLITE/firmware.bin
      
-     - name: Build ESP32-MICROLITE No SPIRAM - 4MB Flash(CAM)
+      - name: Build ESP32-MICROLITE No SPIRAM - 4MB Flash(CAM)
         run: |
           echo "BUILDING MICROLITE_SPIRAM_CAM"
           source ./scripts/build.sh && build_esp32 "MICROLITE_SPIRAM_CAM"
@@ -47,7 +47,7 @@ jobs:
           ls $TARGET/build-MICROLITE_SPIRAM_CAM
         shell: bash
 
-     - name: Archive ESP32-MICROLITE - 4 MB Flash firmware(CAM)
+      - name: Archive ESP32-MICROLITE - 4 MB Flash firmware(CAM)
         uses: actions/upload-artifact@v3
         with:
           name: microlite-spiram-cam-esp32-firmware
