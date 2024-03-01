@@ -29,7 +29,7 @@ function prepare_dependencies {
     git clone --depth 1 https://github.com/micropython/micropython --branch $MICRO_PYTHON_VERSION
 
     # esp32 - https://github.com/mocleiri/tensorflow-micropython-examples.git
-    git clone --depth 1 https://github.com/espressif/tflite-micro-esp-examples --branch $ESP32_TFLITE_VERSION
+    git clone --depth 1 https://github.com/espressif/esp-tflite-micro --branch $ESP32_TFLITE_VERSION
 
     # esp32-camera actually comes through esp package manager but we need it for the headers
     git clone --depth 1 https://github.com/espressif/esp32-camera --branch master
@@ -72,11 +72,13 @@ function build_esp32 {
     cd ../../../../boards/esp32/${BOARD}
 
     echo "LEE PROMPT : BUILDING ${BOARD}.."
-    #idf.py set-target esp32s3
-    #idf.py add-dependency espressif/esp_tinyusb
-    idf.py clean build
+    idf.py add-dependency "espressif/mdns^1.2.4"
+    idf.py add-dependency "esp_tinyusb^1.0.0"
+    rm -rf builds
+    echo $(pwd)
+    idf.py -B ../../../dependencies/micropython/ports/esp32/build-${BOARD} build
 
-    
+    cd ../../../
     #PWD=$(pwd)
     #echo "make ${MAKEOPTS} V=1 BOARD_DIR=$(pwd)/../../../../boards/esp32/${BOARD} BOARD=${BOARD} FROZEN_MANIFEST=$PWD/boards/manifest.py"
 
