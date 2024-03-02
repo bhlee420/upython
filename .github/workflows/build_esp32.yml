@@ -1,4 +1,4 @@
-name: ESP32 CAM
+name: ESP32
 
 # run aaa
 # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#onschedule
@@ -12,7 +12,7 @@ on:
       
 
 jobs:
-  tensorflow_micropython_esp32_build:
+  tensorflow_micropython_esp32_build_new:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -20,7 +20,7 @@ jobs:
 
       - name: Build ESP32-MICROLITE No SPIRAM - 4MB Flash with CAM    
         run: |
-          source ./scripts/build.sh && prepare_dependencies
+          source ./scripts/build.sh && prepare_dependencies 
           echo "CODECONTENTS=$(cat ./dependencies/micropython/tools/ci.sh)"
           source ./dependencies/micropython/tools/ci.sh && ci_esp32_idf50_setup
           echo "BUILDING MICROLITE"
