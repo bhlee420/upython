@@ -4,6 +4,7 @@ name: ESP32
 # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#onschedule
 # add something
 on:
+
   pull_request:
     paths:
       - ".github/workflows/build_esp32.yml"
