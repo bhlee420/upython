@@ -4,7 +4,7 @@ name: ESP32S3
 # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#onschedule
 # add something
 on:
-  push:
+  
   pull_request:
     paths:
       - ".github/workflows/build_esp32s3.yml"
