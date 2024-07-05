@@ -1,5 +1,5 @@
-set (IDF_TARGET esp32)
-
+#set (IDF_TARGET esp32)
+set(IDF_TARGET esp32s3)
 # this option causes the camera module to build
 set(CAMERA_TYPE esp32)
 
@@ -15,6 +15,8 @@ message (STATUS "mpconfigboard.cmake: PROJECT_DIR=${PROJECT_DIR}")
 set(USER_C_MODULES
     ${PROJECT_DIR}/micropython-modules/micropython.cmake
     )
+
+list(APPEND EXTRA_COMPONENT_DIRS ${CMAKE_CURRENT_LIST_DIR}/../../../dependencies/esp-tflite-micro/components/esp-tflite-micro)
   
   
 if(NOT MICROPY_FROZEN_MANIFEST)
