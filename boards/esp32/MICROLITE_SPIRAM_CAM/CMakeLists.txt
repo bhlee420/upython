@@ -9,7 +9,7 @@ set(MICROPY_PORT_DIR ${PROJECT_DIR}/dependencies/micropython/ports/esp32)
 get_filename_component(MICROPY_BOARD_DIR "." ABSOLUTE)
 
 # set(EXTRA_COMPONENT_DIRS ../../../tflm_esp_kernels/components/esp32-camera)
-set(EXTRA_COMPONENT_DIRS ../../../esp32-camera)
+set(EXTRA_COMPONENT_DIRS ${PROJECT_DIR}/dependencies/esp32-camera)
 message (STATUS "EXTRA_COMPONENT_DIRS=${EXTRA_COMPONENT_DIRS}")
 message (STATUS "PROJECT_DIR=${PROJECT_DIR}")
 message (STATUS "MICROPY_PORT_DIR=${MICROPY_PORT_DIR}")
