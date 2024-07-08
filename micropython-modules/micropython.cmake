@@ -43,8 +43,11 @@ endif()
 
 include(${CMAKE_CURRENT_LIST_DIR}/../dependencies/micropython-ulab/code/micropython.cmake)
 
+include(${CMAKE_CURRENT_LIST_DIR}/../dependencies/micropython-camera-driver/src/micropython.cmake)
+
+
 # the camera driver
-#include(${CMAKE_CURRENT_LIST_DIR}/../dependencies/micropython-camera-driver/src/micropython.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/../dependencies/micropython-camera-driver/src/micropython.cmake)
 
 
 
