@@ -37,6 +37,7 @@ if(IDF_TARGET)
 endif()
 
 
+
 # disabled.  will  be incorporated into microlite in #36
 # include(${CMAKE_CURRENT_LIST_DIR}/audio_frontend/micropython.cmake)
 
@@ -44,7 +45,7 @@ include(${CMAKE_CURRENT_LIST_DIR}/../dependencies/micropython-ulab/code/micropyt
 
 # the camera driver
 #include(${CMAKE_CURRENT_LIST_DIR}/../dependencies/micropython-camera-driver/src/micropython.cmake)
-include(${CMAKE_CURRENT_LIST_DIR}/../dependencies/micropython-camera-driver/src/micropython.cmake)
+
 
 
 
