@@ -5,6 +5,10 @@
 #define MICROPY_PY_MACHINE_DAC              (0)
 #define MODULE_CAMERA_ENABLED               (1)
 
+
+#define MICROPY_HW_I2C0_SCL                 (9)
+#define MICROPY_HW_I2C0_SDA                 (8)
+
 // The offset only has an effect if a board has psram
 // it allows the start of the range allocated to 
 #define MICROPY_ALLOCATE_HEAP_USING_MALLOC (1)
