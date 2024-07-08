@@ -1,6 +1,11 @@
 # MicroPython on ESP32, ESP IDF configuration with SPIRAM support
 # The following options override the defaults
 
+# tinyUSB
+CONFIG_TINYUSB_CDC_ENABLED=y
+
+
+
 # Bootloader config
 # CONFIG_LOG_BOOTLOADER_LEVEL_WARN=y
 
