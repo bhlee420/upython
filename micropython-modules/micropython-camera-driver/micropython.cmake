@@ -11,7 +11,7 @@ target_sources(usermod_esp32camera INTERFACE
 )
 
 #get_filename_component(ESP32_CAMERA_DIR ${PROJECT_DIR}/dependencies/esp32-camera ABSOLUTE)
-get_filename_component(ESP32_CAMERA_DIR ${PROJECT_DIR}/../../../dependencies/esp32-camera ABSOLUTE)
+get_filename_component(ESP32_CAMERA_DIR ${PROJECT_DIR}/../../../esp32-camera ABSOLUTE)
 
 message (STATUS  " LEE BO Display : CMAKE_CURRENT_LIST_DIR = ${CMAKE_CURRENT_LIST_DIR}")
 message (STATUS  " LEE BO Display : PROJECT_DIR = ${PROJECT_DIR}")
