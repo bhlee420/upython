@@ -1,9 +1,6 @@
 # we have only integrated with esp32-camera so require
 if (CAMERA_TYPE STREQUAL "esp32")
 
-message (STATUS  " LEE BO Display : CMAKE_CURRENT_LIST_DIR = ${CMAKE_CURRENT_LIST_DIR}")
-message (STATUS  " LEE BO Display : PROJECT_DIR = ${PROJECT_DIR}")
-message (STATUS  " LEE BO Display : ESP32_CAMERA_DIR = ${ESP32_CAMERA_DIR}")
 
 # Create an INTERFACE library for our C module.
 add_library(usermod_esp32camera INTERFACE)
@@ -13,7 +10,13 @@ target_sources(usermod_esp32camera INTERFACE
     ${CMAKE_CURRENT_LIST_DIR}/modcamera.c
 )
 
-get_filename_component(ESP32_CAMERA_DIR ${PROJECT_DIR}/dependencies/esp32-camera ABSOLUTE)
+#get_filename_component(ESP32_CAMERA_DIR ${PROJECT_DIR}/dependencies/esp32-camera ABSOLUTE)
+get_filename_component(ESP32_CAMERA_DIR ${PROJECT_DIR}/../../../dependencies/esp32-camera ABSOLUTE)
+
+message (STATUS  " LEE BO Display : CMAKE_CURRENT_LIST_DIR = ${CMAKE_CURRENT_LIST_DIR}")
+message (STATUS  " LEE BO Display : PROJECT_DIR = ${PROJECT_DIR}")
+message (STATUS  " LEE BO Display : ESP32_CAMERA_DIR = ${ESP32_CAMERA_DIR}")
+
 
 list(APPEND COMPONENTS esp32-camera) 
 
