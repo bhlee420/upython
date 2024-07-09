@@ -13,6 +13,12 @@ get_filename_component(ESP32_CAMERA_DIR ${PROJECT_DIR}/dependencies/esp32-camera
 
 list(APPEND COMPONENTS esp32-camera) 
 
+echo " ***********************LEE********************************* "
+echo " LEE Display : CMAKE_CURRENT_LIST_DIR = ${CMAKE_CURRENT_LIST_DIR}"
+echo " LEE Display : PROJECT_DIR = ${PROJECT_DIR}"
+echo " LEE Display : ESP32_CAMERA_DIR = ${ESP32_CAMERA_DIR}"
+
+
 # Add the current directory as an include directory.
 target_include_directories(usermod_esp32camera INTERFACE
     ${CMAKE_CURRENT_LIST_DIR}
