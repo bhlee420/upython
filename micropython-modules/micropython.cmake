@@ -36,7 +36,7 @@ if(IDF_TARGET)
     include(${CMAKE_CURRENT_LIST_DIR}/microlite/micropython_esp.cmake)
 endif()
 
-
+message (STATUS  " LEE BO Display : CMAKE_CURRENT_LIST_DIR = ${CMAKE_CURRENT_LIST_DIR}")
 
 # disabled.  will  be incorporated into microlite in #36
 # include(${CMAKE_CURRENT_LIST_DIR}/audio_frontend/micropython.cmake)
