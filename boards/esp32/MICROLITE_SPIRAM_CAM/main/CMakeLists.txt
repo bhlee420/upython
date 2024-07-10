@@ -22,4 +22,4 @@ message (STATUS "microlite/main/cmake: MICROPY_DIR=${MICROPY_DIR}")
 
 set(PROJECT_DIR ${MICROPY_DIR}/ports/esp32) 
 
-include(${PROJECT_DIR}/main_esp32s3/CMakeLists.txt)
+include(${PROJECT_DIR}/main/CMakeLists.txt)
