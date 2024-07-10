@@ -18,8 +18,7 @@ endif()
 
 message (STATUS "microlite/main/cmake: MICROPY_DIR=${MICROPY_DIR}")
 #set(PROJECT_DIR ${MICROPY_DIR}/dependencies/ports/esp32) 
- 
+#set(PROJECT_DIR ${MICROPY_DIR}/ports/esp32) 
+set(PROJECT_DIR ${MICROPY_DIR}/ports/esp32/main) 
 
-set(PROJECT_DIR ${MICROPY_DIR}/ports/esp32) 
-
-include(${PROJECT_DIR}/main/CMakeLists.txt)
+include(${MICROPY_DIR}/ports/esp32/main/CMakeLists.txt)
