@@ -77,7 +77,13 @@ function build_esp32 {
     idf.py add-dependency "espressif/esp32-camera"
     rm -rf builds
     echo $(pwd)
-    idf.py -B ../../../dependencies/micropython/ports/esp32/build-${BOARD} build
+    
+    echo "make ${MAKEOPTS} V=1 BOARD_DIR=$(pwd)/../../../../boards/esp32/${BOARD} BOARD=${BOARD} FROZEN_MANIFEST=$PWD/boards/manifest.py"
+
+    make ${MAKEOPTS} V=1 \
+        BOARD_DIR=$(pwd)/../../../../boards/esp32/${BOARD} \
+        BOARD=${BOARD} 
+    #idf.py -B ../../../dependencies/micropython/ports/esp32/build-${BOARD} build
 
     cd ../../../
     #PWD=$(pwd)
