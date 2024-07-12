@@ -81,7 +81,7 @@ function build_esp32 {
     echo "make ${MAKEOPTS} V=1 BOARD_DIR=$(pwd)/../../../../boards/esp32/${BOARD} BOARD=${BOARD} FROZEN_MANIFEST=$PWD/boards/manifest.py"
 
     make ${MAKEOPTS} V=1 \
-        BOARD_DIR=$(pwd)/../../../../boards/esp32/${BOARD} \
+        BOARD_DIR=$(pwd) \
         BOARD=${BOARD} 
     #idf.py -B ../../../dependencies/micropython/ports/esp32/build-${BOARD} build
 
