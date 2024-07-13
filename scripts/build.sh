@@ -85,8 +85,11 @@ function build_esp32 {
     ls
     
     make ${MAKEOPTS} V=1 \
+        -d \
         BOARD_DIR=$(pwd) \
         BOARD=${BOARD} 
+
+    #idf.py clean build
     #idf.py -B ../../../dependencies/micropython/ports/esp32/build-${BOARD} build
 
     cd ../../../
