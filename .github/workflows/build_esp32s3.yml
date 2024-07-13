@@ -41,7 +41,7 @@ jobs:
           echo "Path debug : Lee"
           ls $(pwd)/boards/esp32/MICROLITE_SPIRAM_CAM
           ls $(pwd)/boards/esp32/MICROLITE_SPIRAM_CAM/build
-          ./scripts/assemble-unified-image-esp.sh $MPY_PATH $TARGET "MICROLITE_SPIRAM_CAM"
+          ./scripts/assemble-unified-image-esp.sh $MPY_PATH $TARGET "MICROLITE_SPIRAM_CAM/build"
           echo "After assembling CAM"
           pwd
           # ls $TARGET/build-MICROLITE_SPIRAM_CAM
