@@ -15,9 +15,9 @@ if test -z "$BUILD_DIR"; then
 fi
 
 python3 ${MAKEIMG_PATH}/makeimg.py \
-${BASE_DIR}/build-${BUILD_DIR}/sdkconfig \
-${BASE_DIR}/build-${BUILD_DIR}/bootloader/bootloader.bin \
-${BASE_DIR}/build-${BUILD_DIR}/partition_table/partition-table.bin \
-${BASE_DIR}/build-${BUILD_DIR}/micropython.bin \
-${BASE_DIR}/build-${BUILD_DIR}/firmware.bin \
-${BASE_DIR}/build-${BUILD_DIR}/micropython.uf2
+${BASE_DIR}/${BUILD_DIR}/sdkconfig \
+${BASE_DIR}/${BUILD_DIR}/bootloader/bootloader.bin \
+${BASE_DIR}/${BUILD_DIR}/partition_table/partition-table.bin \
+${BASE_DIR}/${BUILD_DIR}/micropython.bin \
+${BASE_DIR}/${BUILD_DIR}/firmware.bin \
+${BASE_DIR}/${BUILD_DIR}/micropython.uf2
