@@ -77,7 +77,7 @@ function build_esp32 {
     idf.py add-dependency "espressif/esp32-camera"
     rm -rf builds
     PWd=$(pwd)
-    echo "Lee dir : {PWd} !"
+    echo "Lee dir :${PWd} !"
     
     echo "make ${MAKEOPTS} V=1 BOARD_DIR=$(pwd)/../../../../boards/esp32/${BOARD} BOARD=${BOARD} FROZEN_MANIFEST=$PWD/boards/manifest.py"
 
