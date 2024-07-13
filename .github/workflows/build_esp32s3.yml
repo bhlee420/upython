@@ -26,12 +26,13 @@ jobs:
           source ./dependencies/micropython/tools/ci.sh && ci_esp32_idf50_setup
           echo "Setup idf"
           pwd
-          source ./scripts/build.sh && build_esp32 "MICROLITE_S3_SPIRAM"
-          TARGET=$(pwd)/dependencies/micropython/ports/esp32
-          ./scripts/assemble-unified-image-esp.sh $TARGET "MICROLITE_S3_SPIRAM"
-          echo "After assembling"
-          pwd
-          ls $TARGET/build-MICROLITE_S3_SPIRAM
+          
+          # source ./scripts/build.sh && build_esp32 "MICROLITE_S3_SPIRAM"
+          # TARGET=$(pwd)/dependencies/micropython/ports/esp32
+          # ./scripts/assemble-unified-image-esp.sh $TARGET "MICROLITE_S3_SPIRAM"
+          # echo "After assembling"
+          # pwd
+          # ls $TARGET/build-MICROLITE_S3_SPIRAM
 
           source ./scripts/build.sh && build_esp32 "MICROLITE_SPIRAM_CAM"
           TARGET=$(pwd)/dependencies/micropython/ports/esp32
