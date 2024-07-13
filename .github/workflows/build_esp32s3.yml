@@ -49,16 +49,15 @@ jobs:
         
         shell: bash
 
-      - name: Archive ESP32-MICROLITE with SPIRAM - 8 MB Flash firmware
-        uses: actions/upload-artifact@v3
-        with:
-          name: microlite-esp32s3-firmware
-          path: /home/runner/work/upython/upython/dependencies/micropython/ports/esp32/build-MICROLITE_S3_SPIRAM/firmware.bin
+      #- name: Archive ESP32-MICROLITE with SPIRAM - 8 MB Flash firmware
+      #uses: actions/upload-artifact@v3
+        #with:
+          #name: microlite-esp32s3-firmware
+          #path: /home/runner/work/upython/upython/dependencies/micropython/ports/esp32/build-MICROLITE_S3_SPIRAM/firmware.bin
 
       - name: Archive ESP32-MICROLITE with SPIRAM - 8 MB Flash firmware with CAM
         uses: actions/upload-artifact@v3
         with:
           name: microlite-esp32s3_CAM-firmware
-          path: /home/runner/work/upython/upython/dependencies/micropython/ports/esp32/build-MICROLITE_SPIRAM_CAM/firmware.bin
-
+          path: $(pwd)/boards/esp32/MICROLITE_SPIRAM_CAM/build/firmware.bin
     
