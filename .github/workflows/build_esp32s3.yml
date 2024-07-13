@@ -38,12 +38,13 @@ jobs:
           MPY_PATH=$(pwd)/dependencies/micropython/ports/esp32
           TARGET=$(pwd)/boards/esp32
 
-          ls -al
-          ls build
+          echo "Path debug : Lee"
+          ls $(TARGET)/MICROLITE_SPIRAM_CAM
+          ls $(TARGET)/MICROLITE_SPIRAM_CAM/build
           ./scripts/assemble-unified-image-esp.sh $MPY_PATH $TARGET "MICROLITE_SPIRAM_CAM"
           echo "After assembling CAM"
           pwd
-          ls $TARGET/build-MICROLITE_SPIRAM_CAM
+          # ls $TARGET/build-MICROLITE_SPIRAM_CAM
 
         
         shell: bash
