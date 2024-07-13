@@ -36,7 +36,7 @@ jobs:
 
           source ./scripts/build.sh && build_esp32 "MICROLITE_SPIRAM_CAM"
           MPY_PATH=$(pwd)/dependencies/micropython/ports/esp32
-          TARGET=$(pwd)/boards/esp32
+          TARGET=$(pwd)/boards/esp32/MICROLITE_SPIRAM_CAM
           ./scripts/assemble-unified-image-esp.sh $MPY_PATH $TARGET "MICROLITE_SPIRAM_CAM"
           echo "After assembling CAM"
           pwd
