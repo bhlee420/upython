@@ -55,6 +55,13 @@ jobs:
           #name: microlite-esp32s3-firmware
           #path: /home/runner/work/upython/upython/dependencies/micropython/ports/esp32/build-MICROLITE_S3_SPIRAM/firmware.bin
 
+      - name: Intermediate image
+        uses: actions/upload-artifact@v3
+        with:
+          name: intermediate-image
+          path: /home/runner/work/upython/upython/boards/esp32/MICROLITE_SPIRAM_CAM/build/micropython.bin
+
+      
       - name: Archive ESP32-MICROLITE with SPIRAM - 8 MB Flash firmware with CAM
         uses: actions/upload-artifact@v3
         with:
