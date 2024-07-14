@@ -38,6 +38,8 @@ jobs:
           MPY_PATH=$(pwd)/dependencies/micropython/ports/esp32
           TARGET=$(pwd)/boards/esp32
 
+
+
           echo "Path debug : Lee"
           
           ls $(pwd)/boards/esp32/MICROLITE_SPIRAM_CAM
@@ -58,7 +60,12 @@ jobs:
           echo "After assembling CAM"
           pwd
           # ls $TARGET/build-MICROLITE_SPIRAM_CAM
+          
+          # compress and save /build as archive
+          tar czvf build.tar.gz $(pwd)/boards/esp32/MICROLITE_SPIRAM_CAM/build
+          
 
+          
         
         shell: bash
 
@@ -68,11 +75,11 @@ jobs:
           #name: microlite-esp32s3-firmware
           #path: /home/runner/work/upython/upython/dependencies/micropython/ports/esp32/build-MICROLITE_S3_SPIRAM/firmware.bin
 
-      - name: Intermediate image
+      - name: build folder DOWNLOAD
         uses: actions/upload-artifact@v3
         with:
-          name: intermediate-image
-          path: /home/runner/work/upython/upython/boards/esp32/MICROLITE_SPIRAM_CAM/build/micropython.bin
+          name: build-folder
+          path: /home/runner/work/upython/upython/boards/esp32/MICROLITE_SPIRAM_CAM/build/build.tar.gz
 
       
       - name: Archive ESP32-MICROLITE with SPIRAM - 8 MB Flash firmware with CAM
