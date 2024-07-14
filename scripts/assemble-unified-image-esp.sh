@@ -14,6 +14,9 @@ if test -z "$BUILD_DIR"; then
 	exit 1
 fi
 
+echo "Assemble-unified-image START"
+cat ${MAKEIMG_PATH}/makeimg.py
+
 python3 ${MAKEIMG_PATH}/makeimg.py \
 ${BASE_DIR}/${BUILD_DIR}/sdkconfig \
 ${BASE_DIR}/${BUILD_DIR}/bootloader/bootloader.bin \
