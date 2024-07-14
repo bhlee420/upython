@@ -39,8 +39,21 @@ jobs:
           TARGET=$(pwd)/boards/esp32
 
           echo "Path debug : Lee"
+          
           ls $(pwd)/boards/esp32/MICROLITE_SPIRAM_CAM
+          
+          echo "---------------Build DIR---------------"
+          
           ls $(pwd)/boards/esp32/MICROLITE_SPIRAM_CAM/build
+          echo "map file contents"
+          cat $(pwd)/boards/esp32/MICROLITE_SPIRAM_CAM/build/micropython.map
+
+          echo "------------CMakeCache.txt--------------"
+          cat $(pwd)/boards/esp32/MICROLITE_SPIRAM_CAM/build/CMakeCache.txt 
+          echo "------------   Makefile   --------------"
+          cat $(pwd)/boards/esp32/MICROLITE_SPIRAM_CAM/build/Makefile
+
+          
           ./scripts/assemble-unified-image-esp.sh $MPY_PATH $TARGET "MICROLITE_SPIRAM_CAM/build"
           echo "After assembling CAM"
           pwd
