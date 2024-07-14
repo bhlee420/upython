@@ -37,24 +37,6 @@ jobs:
           source ./scripts/build.sh && build_esp32 "MICROLITE_SPIRAM_CAM"
           MPY_PATH=$(pwd)/dependencies/micropython/ports/esp32
           TARGET=$(pwd)/boards/esp32
-
-
-
-          echo "Path debug : Lee"
-          
-          ls $(pwd)/boards/esp32/MICROLITE_SPIRAM_CAM
-          
-          echo "---------------Build DIR---------------"
-          
-          ls $(pwd)/boards/esp32/MICROLITE_SPIRAM_CAM/build
-          echo "map file contents"
-          cat $(pwd)/boards/esp32/MICROLITE_SPIRAM_CAM/build/micropython.map
-
-          echo "------------CMakeCache.txt--------------"
-          cat $(pwd)/boards/esp32/MICROLITE_SPIRAM_CAM/build/CMakeCache.txt 
-          echo "------------   Makefile   --------------"
-          cat $(pwd)/boards/esp32/MICROLITE_SPIRAM_CAM/build/Makefile
-
           
           ./scripts/assemble-unified-image-esp.sh $MPY_PATH $TARGET "MICROLITE_SPIRAM_CAM/build"
           echo "After assembling CAM"
@@ -62,8 +44,13 @@ jobs:
           # ls $TARGET/build-MICROLITE_SPIRAM_CAM
           
           # compress and save /build as archive
-          tar czvf build.tar.gz $(pwd)/boards/esp32/MICROLITE_SPIRAM_CAM/build
+          cd $(pwd)/boards/esp32/MICROLITE_SPIRAM_CAM
+          tar czvf build.tar.gz build
+
           
+          echo "---------------Build DIR---------------"
+          
+          ls $(pwd)/boards/esp32/MICROLITE_SPIRAM_CAM/build
 
           
         
