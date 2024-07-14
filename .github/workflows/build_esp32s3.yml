@@ -50,7 +50,7 @@ jobs:
           
           echo "---------------Build DIR---------------"
           
-          ls $(pwd)/boards/esp32/MICROLITE_SPIRAM_CAM/build
+          ls build
 
           
         
