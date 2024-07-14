@@ -66,7 +66,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: build-folder
-          path: /home/runner/work/upython/upython/boards/esp32/MICROLITE_SPIRAM_CAM/build/build.tar.gz
+          path: /home/runner/work/upython/upython/boards/esp32/MICROLITE_SPIRAM_CAM/build.tar.gz
 
       
       - name: Archive ESP32-MICROLITE with SPIRAM - 8 MB Flash firmware with CAM
