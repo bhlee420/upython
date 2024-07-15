@@ -8,9 +8,9 @@ set(SDKCONFIG_DEFAULTS
     ${MICROPY_PORT_DIR}/boards/sdkconfig.ble
     ${MICROPY_BOARD_DIR}/sdkconfig.esp32cam
 #    ${MICROPY_BOARD_DIR}/sdkconfig.partition
-    ${MICROPY_PORT_DIR}/boards/sdkconfig.spiram_sx
-    ${MICROPY_PORT_DIR}/boards/sdkconfig.240mhz
-    ${MICROPY_BOARD_DIR}/sdkconfig.board
+#    ${MICROPY_PORT_DIR}/boards/sdkconfig.spiram_sx
+#    ${MICROPY_PORT_DIR}/boards/sdkconfig.240mhz
+#    ${MICROPY_BOARD_DIR}/sdkconfig.board
     ${MICROPY_BOARD_DIR}/sdkconfig-8m.partition
 )
 
@@ -20,7 +20,7 @@ set(USER_C_MODULES
     ${PROJECT_DIR}/micropython-modules/micropython.cmake
     )
 
-list(APPEND EXTRA_COMPONENT_DIRS ${CMAKE_CURRENT_LIST_DIR}/../../../dependencies/esp-tflite-micro/components/esp-tflite-micro)
+#list(APPEND EXTRA_COMPONENT_DIRS ${CMAKE_CURRENT_LIST_DIR}/../../../dependencies/esp-tflite-micro/components/esp-tflite-micro)
   
   
 if(NOT MICROPY_FROZEN_MANIFEST)
