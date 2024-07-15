@@ -1,5 +1,5 @@
 # we have only integrated with esp32-camera so require
-#if (CAMERA_TYPE STREQUAL "esp32")
+if (CAMERA_TYPE STREQUAL "esp32")
 
 
 # Create an INTERFACE library for our C module.
