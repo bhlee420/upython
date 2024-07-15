@@ -10,8 +10,8 @@ set(SDKCONFIG_DEFAULTS
 #    ${MICROPY_BOARD_DIR}/sdkconfig.partition
 #    ${MICROPY_PORT_DIR}/boards/sdkconfig.spiram_sx
 #    ${MICROPY_PORT_DIR}/boards/sdkconfig.240mhz
-#    ${MICROPY_BOARD_DIR}/sdkconfig.board
-    ${MICROPY_BOARD_DIR}/sdkconfig-8m.partition
+    ${MICROPY_BOARD_DIR}/sdkconfig.board
+#    ${MICROPY_BOARD_DIR}/sdkconfig-8m.partition
 )
 
 message (STATUS "mpconfigboard.cmake: PROJECT_DIR=${PROJECT_DIR}")
