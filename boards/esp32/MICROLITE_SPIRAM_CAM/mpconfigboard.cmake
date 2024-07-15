@@ -20,7 +20,7 @@ set(USER_C_MODULES
     ${PROJECT_DIR}/micropython-modules/micropython.cmake
     )
 
-#list(APPEND EXTRA_COMPONENT_DIRS ${CMAKE_CURRENT_LIST_DIR}/../../../dependencies/esp-tflite-micro/components/esp-tflite-micro)
+list(APPEND EXTRA_COMPONENT_DIRS ${CMAKE_CURRENT_LIST_DIR}/../../../dependencies/esp-tflite-micro/components/esp-tflite-micro)
   
   
 if(NOT MICROPY_FROZEN_MANIFEST)
