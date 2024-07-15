@@ -35,9 +35,7 @@ target_include_directories(usermod_esp32camera INTERFACE
     ${ESP32_CAMERA_DIR}/sensors/private_include
 )
 
-target_compile_definitions(usermod_esp32camera INTERFACE
-    MODULE_USERMOD_ESP32CAMERA_ENABLED=1
-)
+target_compile_definitions(usermod_esp32camera INTERFACE)
 
 # Link our INTERFACE library to the usermod target.
 target_link_libraries(usermod INTERFACE usermod_esp32camera)
