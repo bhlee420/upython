@@ -86,7 +86,7 @@ function build_esp32 {
 
     #idf.py clean build
 
-    make USER_C_MODULES=../../../micropython-modules/micropython-camera-driver/micropython.cmake
+    make BOARD_DIR=$(pwd) BOARD=${BOARD} USER_C_MODULES=../../../micropython-modules/micropython-camera-driver/micropython.cmake
     
     #make ${MAKEOPTS} V=1 \
         #-d \
