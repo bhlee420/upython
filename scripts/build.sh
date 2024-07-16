@@ -81,14 +81,14 @@ function build_esp32 {
     
     echo "make ${MAKEOPTS} V=1 BOARD_DIR=$(pwd)/../../../../boards/esp32/${BOARD} BOARD=${BOARD} FROZEN_MANIFEST=$PWD/boards/manifest.py"
 
-    echo "make ${MAKEOPTS} V=1 BOARD_DIR=$(pwd)/../ BOARD=${BOARD} FROZEN_MANIFEST=$PWD/boards/manifest.py"
+    echo "make${MAKEOPTS} V=1 BOARD_DIR=$(pwd) BOARD=${BOARD} USER_C_MODULES=../../../micropython-modules/micropython-camera-driver/micropython.cmake"
 
 
     ls
 
     #idf.py clean build
 
-    make BOARD_DIR=$(pwd)/../ BOARD=${BOARD} USER_C_MODULES=../../../micropython-modules/micropython-camera-driver/micropython.cmake
+    make ${MAKEOPTS} V=1 BOARD_DIR=$(pwd) BOARD=${BOARD} USER_C_MODULES=../../../micropython-modules/micropython-camera-driver/micropython.cmake
     
     #make ${MAKEOPTS} V=1 \
         #-d \
