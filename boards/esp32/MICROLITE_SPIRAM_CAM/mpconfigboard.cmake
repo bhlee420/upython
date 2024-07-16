@@ -8,8 +8,8 @@ set(SDKCONFIG_DEFAULTS
     ${MICROPY_PORT_DIR}/boards/sdkconfig.ble
     ${MICROPY_BOARD_DIR}/sdkconfig.esp32cam
 #    ${MICROPY_BOARD_DIR}/sdkconfig.partition
-#    ${MICROPY_PORT_DIR}/boards/sdkconfig.spiram_sx
-#    ${MICROPY_PORT_DIR}/boards/sdkconfig.240mhz
+    ${MICROPY_PORT_DIR}/boards/sdkconfig.spiram_sx
+    ${MICROPY_PORT_DIR}/boards/sdkconfig.240mhz
     ${MICROPY_BOARD_DIR}/sdkconfig.board
 #    ${MICROPY_BOARD_DIR}/sdkconfig-8m.partition
 )
