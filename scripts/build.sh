@@ -78,20 +78,24 @@ function build_esp32 {
     rm -rf builds
     PWd=$(pwd)
     echo "Lee dir :${PWd} !"
+     
     
     echo "make ${MAKEOPTS} V=1 BOARD_DIR=$(pwd)/../../../../boards/esp32/${BOARD} BOARD=${BOARD} FROZEN_MANIFEST=$PWD/boards/manifest.py"
 
     echo "make${MAKEOPTS} V=1 BOARD_DIR=$(pwd) BOARD=${BOARD} USER_C_MODULES=../../../micropython-modules/micropython-camera-driver/micropython.cmake"
 
+    
+
 
     ls
 
+    
     #idf.py clean build
 
-    idf.py clean
+    #idf.py clean
 
-    idf.py USER_C_MODULES=../../../micropython-modules/micropython-camera-driver/micropython.cmake 
-    #make ${MAKEOPTS} V=1 BOARD_DIR=$(pwd) BOARD=${BOARD} USER_C_MODULES=../../../micropython-modules/micropython-camera-driver/micropython.cmake
+    #idf.py USER_C_MODULES=../../../micropython-modules/micropython-camera-driver/micropython.cmake 
+    make -C /home/runner/work/upython/upython/micropython/ports/esp32   BOARD_DIR=$(pwd) BOARD=${BOARD} USER_C_MODULES=../../../micropython-modules/micropython-camera-driver/micropython.cmake
     
     #make ${MAKEOPTS} V=1 \
         #-d \
