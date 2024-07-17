@@ -3,6 +3,10 @@ set(IDF_TARGET esp32s3)
 # this option causes the camera module to build
 set(CAMERA_TYPE esp32)
 
+set(PROJECT_DIR /home/runner/work/upython/upython)
+set(MICROPY_PORT_DIR ${PROJECT_DIR}/dependencies/micropython/ports/esp32)
+set(MICROPY_BOARD_DIR ${PROJECT_DIR}/boards/esp32/MICROLITE_SPIRAM_CAM)
+
 set(SDKCONFIG_DEFAULTS
     ${MICROPY_PORT_DIR}/boards/sdkconfig.base
     ${MICROPY_PORT_DIR}/boards/sdkconfig.ble
