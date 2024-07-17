@@ -14,7 +14,10 @@ set(SDKCONFIG_DEFAULTS
 #    ${MICROPY_BOARD_DIR}/sdkconfig-8m.partition
 )
 
+
 message (STATUS "mpconfigboard.cmake: PROJECT_DIR=${PROJECT_DIR}")
+message (STATUS "SUB : MICROPY_PORT=${MICROPY_PORT_DIR}")
+message (STATUS "SUB : MICROPY_BD=${MICROPY_BOARD_DIR}")
 
 set(USER_C_MODULES
     ${PROJECT_DIR}/micropython-modules/micropython.cmake
