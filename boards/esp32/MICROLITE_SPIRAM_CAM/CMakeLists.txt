@@ -4,9 +4,11 @@
 cmake_minimum_required(VERSION 3.12)
 
 # Set the location of MicroPython, the esp32 port, and the board directory.
-get_filename_component(PROJECT_DIR "../../.." ABSOLUTE)
+#get_filename_component(PROJECT_DIR "../../.." ABSOLUTE)
+set(PROJECT_DIR /home/runner/work/upython/upython)
 set(MICROPY_PORT_DIR ${PROJECT_DIR}/dependencies/micropython/ports/esp32)
-get_filename_component(MICROPY_BOARD_DIR "." ABSOLUTE)
+set(MICROPY_BOARD_DIR ${PROJECT_DIR}/boards/esp32/MICROLITE_SPIRAM_CAM)
+#get_filename_component(MICROPY_BOARD_DIR "." ABSOLUTE)
 
 # set(EXTRA_COMPONENT_DIRS ../../../tflm_esp_kernels/components/esp32-camera)
 set(EXTRA_COMPONENT_DIRS ${PROJECT_DIR}/dependencies/esp32-camera)
