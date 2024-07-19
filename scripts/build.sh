@@ -66,8 +66,9 @@ function build_esp32 {
     cd dependencies/micropython
     make -C mpy-cross V=1 clean all
     cd ports/esp32
-    make submodules
-
+#    make submodules
+    make USER_C_MODULES=/home/runner/work/upython/upython/micropython-modules/micropython.cmake
+   
     echo "LEE PROMPT : cd ../../boards/esp32/${BOARD}"
     cd ../../../../boards/esp32/${BOARD}
 
