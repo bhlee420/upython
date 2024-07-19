@@ -32,9 +32,6 @@ if (PICO_SDK_PATH)
   include(${CMAKE_CURRENT_LIST_DIR}/microlite/micropython_rp2.cmake)
 endif()
 
-if(IDF_TARGET)
-    include(${CMAKE_CURRENT_LIST_DIR}/microlite/micropython_esp.cmake)
-endif()
 
 message (STATUS  " LEE BO Display : CMAKE_CURRENT_LIST_DIR = ${CMAKE_CURRENT_LIST_DIR}")
 
@@ -45,10 +42,12 @@ include(${CMAKE_CURRENT_LIST_DIR}/../dependencies/micropython-ulab/code/micropyt
 
 #include(${CMAKE_CURRENT_LIST_DIR}/../dependencies/micropython-camera-driver/src/micropython.cmake)
 
-
 # the camera driver
 include(${CMAKE_CURRENT_LIST_DIR}/micropython-camera-driver/micropython.cmake)
 
+if(IDF_TARGET)
+    include(${CMAKE_CURRENT_LIST_DIR}/microlite/micropython_esp.cmake)
+endif()
 
 
 
