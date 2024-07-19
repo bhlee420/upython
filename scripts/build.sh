@@ -75,7 +75,7 @@ function build_esp32 {
     echo "LEE PROMPT : BUILDING ${BOARD}.."
     idf.py add-dependency "espressif/mdns^1.2.4"
     idf.py add-dependency "esp_tinyusb^1.0.0"
-    idf.py add-dependency "espressif/esp32-camera"
+    #idf.py add-dependency "espressif/esp32-camera"
     rm -rf builds
     PWd=$(pwd)
     echo "Lee dir :${PWd} !"
