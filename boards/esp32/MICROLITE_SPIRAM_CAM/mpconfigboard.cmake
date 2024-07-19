@@ -23,12 +23,12 @@ message (STATUS "mpconfigboard.cmake: PROJECT_DIR=${PROJECT_DIR}")
 message (STATUS "SUB : MICROPY_PORT=${MICROPY_PORT_DIR}")
 message (STATUS "SUB : MICROPY_BD=${MICROPY_BOARD_DIR}")
 
-#set(USER_C_MODULES
-#    ${PROJECT_DIR}/micropython-modules/micropython.cmake
-#    )
+set(USER_C_MODULES
+    ${PROJECT_DIR}/micropython-modules/micropython.cmake
+    )
 
 
-include(${PROJECT_DIR}/micropython-modules/micropython.cmake)  
+#include(${PROJECT_DIR}/micropython-modules/micropython.cmake)  
 
 
 list(APPEND EXTRA_COMPONENT_DIRS ${CMAKE_CURRENT_LIST_DIR}/../../../dependencies/esp-tflite-micro/components/esp-tflite-micro)
