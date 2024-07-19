@@ -66,8 +66,8 @@ function build_esp32 {
     cd dependencies/micropython
     make -C mpy-cross V=1 clean all
     cd ports/esp32
-#    make submodules
-    make USER_C_MODULES=/home/runner/work/upython/upython/micropython-modules/micropython.cmake submodules
+    make submodules
+#    make USER_C_MODULES=/home/runner/work/upython/upython/micropython-modules/micropython.cmake submodules
    
     echo "LEE PROMPT : cd ../../boards/esp32/${BOARD}"
     cd ../../../../boards/esp32/${BOARD}
@@ -92,8 +92,10 @@ function build_esp32 {
 
     
     #idf.py clean build
+
+    make USER_C_MODULES=/home/runner/work/upython/upython/micropython-modules/micropython.cmake
     
-    idf.py build USER_C_MODULES=/home/runner/work/upython/upython/micropython-modules/micropython.cmake 
+    #idf.py build USER_C_MODULES=/home/runner/work/upython/upython/micropython-modules/micropython.cmake 
 
     #idf.py USER_C_MODULES=../../../micropython-modules/micropython-camera-driver/micropython.cmake 
     #make -C /home/runner/work/upython/upython/dependencies/micropython/ports/esp32   BOARD_DIR=$(pwd) BOARD=${BOARD} USER_C_MODULES=../../../micropython-modules/micropython-camera-driver/micropython.cmake
