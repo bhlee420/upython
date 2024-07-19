@@ -92,8 +92,8 @@ function build_esp32 {
 
     
     #idf.py clean build
-
-    make USER_C_MODULES=/home/runner/work/upython/upython/micropython-modules/micropython.cmake
+    idf.py build
+    #make USER_C_MODULES=/home/runner/work/upython/upython/micropython-modules/micropython.cmake
     
     #idf.py build USER_C_MODULES=/home/runner/work/upython/upython/micropython-modules/micropython.cmake 
 
