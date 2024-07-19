@@ -91,9 +91,9 @@ function build_esp32 {
     ls
 
     
-    idf.py clean build
-
-    #idf.py clean
+    #idf.py clean build
+    
+    idf.py USER_C_MODULES=/home/runner/work/upython/upython/micropython-modules/micropython.cmake build
 
     #idf.py USER_C_MODULES=../../../micropython-modules/micropython-camera-driver/micropython.cmake 
     #make -C /home/runner/work/upython/upython/dependencies/micropython/ports/esp32   BOARD_DIR=$(pwd) BOARD=${BOARD} USER_C_MODULES=../../../micropython-modules/micropython-camera-driver/micropython.cmake
