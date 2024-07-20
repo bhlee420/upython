@@ -6,7 +6,7 @@
 #define MICROPY_PY_BLUETOOTH                (0)
 #define MICROPY_PY_MACHINE_DAC              (0)
 //#define MODULE_CAMERA_ENABLED               (1)
-#define MICROPYTHON-CAMERA-DRIVER_ENABLED               (1)
+#define MICROPYTHON-modcamera_ENABLED               (1)
 
 #define MICROPY_HW_I2C0_SCL                 (9)
 #define MICROPY_HW_I2C0_SDA                 (8)
