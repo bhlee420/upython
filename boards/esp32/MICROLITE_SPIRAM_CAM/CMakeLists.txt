@@ -11,7 +11,10 @@ set(MICROPY_BOARD_DIR ${PROJECT_DIR}/boards/esp32/MICROLITE_SPIRAM_CAM)
 #get_filename_component(MICROPY_BOARD_DIR "." ABSOLUTE)
 
 # set(EXTRA_COMPONENT_DIRS ../../../tflm_esp_kernels/components/esp32-camera)
-set(EXTRA_COMPONENT_DIRS ${PROJECT_DIR}/dependencies/esp32-camera)
+set(EXTRA_COMPONENT_DIRS ${PROJECT_DIR}/micropython-modules/micropython-camera-driver)
+list(APPEND EXTRA_COMPONENT_DIRS ${PROJECT_DIR}/micropython-modules/microlite)
+list(APPEND EXTRA_COMPONENT_DIRS ${PROJECT_DIR}/micropython-modules/audio_frontend)
+
 message (STATUS "EXTRA_COMPONENT_DIRS=${EXTRA_COMPONENT_DIRS}")
 message (STATUS "PROJECT_DIR=${PROJECT_DIR}")
 message (STATUS "MICROPY_PORT_DIR=${MICROPY_PORT_DIR}")
