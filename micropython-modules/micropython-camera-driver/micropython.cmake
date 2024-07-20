@@ -5,6 +5,7 @@ if (CAMERA_TYPE STREQUAL "esp32")
 # Create an INTERFACE library for our C module.
 add_library(usermod_esp32camera INTERFACE)
 
+
 # Add our source files to the lib
 target_sources(usermod_esp32camera INTERFACE
     ${CMAKE_CURRENT_LIST_DIR}/modcamera.c
@@ -18,7 +19,7 @@ message (STATUS  " LEE BO Display : PROJECT_DIR = ${PROJECT_DIR}")
 message (STATUS  " LEE BO Display : ESP32_CAMERA_DIR = ${ESP32_CAMERA_DIR}")
 
 
-list(APPEND COMPONENTS esp32-camera) 
+list(APPEND COMPONENTS Camera) 
 
 # message (STATUS "mpconfigboard.cmake: PROJECT_DIR=${PROJECT_DIR}")
 # echo " ***********************LEE********************************* "
