@@ -64,7 +64,7 @@ function build_esp32 {
     # xargs --show-limits
     source esp-idf/export.sh
 
-    cp -r /home/runner/work/upython/upython/esp32-camera /home/runner/work/upython/upython/components
+    cp -r /home/runner/work/upython/upython/dependencies/esp32-camera /home/runner/work/upython/upython/esp-idf/components
     ls
     
     cd dependencies/micropython
