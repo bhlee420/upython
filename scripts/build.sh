@@ -63,27 +63,31 @@ function build_esp32 {
     which python
     # xargs --show-limits
     source esp-idf/export.sh
+
+    cp -r /home/runner/work/upython/upython/esp32-camera /home/runner/work/upython/upython/components
+    ls
+    
     cd dependencies/micropython
     make -C mpy-cross V=1 clean all
     cd ports/esp32
     make submodules
 #    make USER_C_MODULES=/home/runner/work/upython/upython/micropython-modules/micropython.cmake submodules
    
-    echo "LEE PROMPT : cd ../../boards/esp32/${BOARD}"
-    cd ../../../../boards/esp32/${BOARD}
+#  echo "LEE PROMPT : cd ../../boards/esp32/${BOARD}"
+#  cd ../../../../boards/esp32/${BOARD}
 
-    echo "LEE PROMPT : BUILDING ${BOARD}.."
-    idf.py add-dependency "espressif/mdns^1.2.4"
-    idf.py add-dependency "esp_tinyusb^1.0.0"
+# echo "LEE PROMPT : BUILDING ${BOARD}.."
+#    idf.py add-dependency "espressif/mdns^1.2.4"
+#    idf.py add-dependency "esp_tinyusb^1.0.0"
     #idf.py add-dependency "espressif/esp32-camera"
-    rm -rf builds
-    PWd=$(pwd)
-    echo "Lee dir :${PWd} !"
+#    rm -rf builds
+ #   PWd=$(pwd)
+  #  echo "Lee dir :${PWd} !"
      
     
-    echo "make ${MAKEOPTS} V=1 BOARD_DIR=$(pwd)/../../../../boards/esp32/${BOARD} BOARD=${BOARD} FROZEN_MANIFEST=$PWD/boards/manifest.py"
+ #   echo "make ${MAKEOPTS} V=1 BOARD_DIR=$(pwd)/../../../../boards/esp32/${BOARD} BOARD=${BOARD} FROZEN_MANIFEST=$PWD/boards/manifest.py"
 
-    echo "make${MAKEOPTS} V=1 BOARD_DIR=$(pwd) BOARD=${BOARD} USER_C_MODULES=../../../micropython-modules/micropython-camera-driver/micropython.cmake"
+  #  echo "make${MAKEOPTS} V=1 BOARD_DIR=$(pwd) BOARD=${BOARD} USER_C_MODULES=../../../micropython-modules/micropython-camera-driver/micropython.cmake"
 
     
 
@@ -93,7 +97,7 @@ function build_esp32 {
     
     #idf.py clean build
     #idf.py build
-    cd ../
+    # cd ../
     
     make USER_C_MODULES=/home/runner/work/upython/upython/micropython-modules/micropython.cmake BOARD=${BOARD}
     
