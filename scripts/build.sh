@@ -99,7 +99,7 @@ function build_esp32 {
     #idf.py build
     # cd ../
     
-    make USER_C_MODULES=/home/runner/work/upython/upython/micropython-modules/micropython.cmake BOARD=/home/runner/work/upython/upython/dependencies/micropython/ports/esp32/boards/MICROLITE_SPIRAM_CAM
+    make USER_C_MODULES=/home/runner/work/upython/upython/micropython-modules/micropython.cmake BOARD=MICROLITE_SPIRAM_CAM
     
     #idf.py build USER_C_MODULES=/home/runner/work/upython/upython/micropython-modules/micropython.cmake 
 
