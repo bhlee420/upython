@@ -65,8 +65,9 @@ function build_esp32 {
     source esp-idf/export.sh
 
     cp -r /home/runner/work/upython/upython/dependencies/esp32-camera /home/runner/work/upython/upython/esp-idf/components
-    echo "LEE PROMPT => components directory !!! "
-    ls /home/runner/work/upython/upython/esp-idf/components
+    cp -r /home/runner/work/upython/upython/boards/esp32/MICROLITE_SPIRAM_CAM /home/runner/work/upython/upython/dependencies/micropython/ports/esp32/boards
+    echo "LEE PROMPT => board directory !!! "
+    ls /home/runner/work/upython/upython/dependencies/micropython/ports/esp32/boards
     echo "LEE PROMPT ************************* "
     echo "LEE BOARD => ${BOARD} !!! "
 
@@ -93,17 +94,12 @@ function build_esp32 {
 
   #  echo "make${MAKEOPTS} V=1 BOARD_DIR=$(pwd) BOARD=${BOARD} USER_C_MODULES=../../../micropython-modules/micropython-camera-driver/micropython.cmake"
 
-    
-
-
-    ls
-
-    
+   
     #idf.py clean build
     #idf.py build
     # cd ../
     
-    make USER_C_MODULES=/home/runner/work/upython/upython/micropython-modules/micropython.cmake BOARD=${BOARD}
+    make USER_C_MODULES=/home/runner/work/upython/upython/micropython-modules/micropython.cmake BOARD=/home/runner/work/upython/upython/dependencies/micropython/ports/esp32/boards/MICROLITE_SPIRAM_CAM
     
     #idf.py build USER_C_MODULES=/home/runner/work/upython/upython/micropython-modules/micropython.cmake 
 
