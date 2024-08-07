@@ -65,7 +65,11 @@ function build_esp32 {
     source esp-idf/export.sh
 
     cp -r /home/runner/work/upython/upython/dependencies/esp32-camera /home/runner/work/upython/upython/esp-idf/components
-    ls
+    echo "LEE PROMPT => components directory !!! "
+    ls /home/runner/work/upython/upython/esp-idf/components
+    echo "LEE PROMPT ************************* "
+    echo "LEE BOARD => ${BOARD} !!! "
+
     
     cd dependencies/micropython
     make -C mpy-cross V=1 clean all
