@@ -79,11 +79,11 @@ function build_esp32 {
 #    make USER_C_MODULES=/home/runner/work/upython/upython/micropython-modules/micropython.cmake submodules
    
 #  echo "LEE PROMPT : cd ../../boards/esp32/${BOARD}"
-#  cd ../../../../boards/esp32/${BOARD}
+  cd ../../../../boards/esp32/${BOARD}
 
 # echo "LEE PROMPT : BUILDING ${BOARD}.."
-#    idf.py add-dependency "espressif/mdns^1.2.4"
-#    idf.py add-dependency "esp_tinyusb^1.0.0"
+    idf.py add-dependency "espressif/mdns^1.2.4"
+    idf.py add-dependency "esp_tinyusb^1.0.0"
     #idf.py add-dependency "espressif/esp32-camera"
 #    rm -rf builds
  #   PWd=$(pwd)
@@ -96,10 +96,10 @@ function build_esp32 {
 
    
     #idf.py clean build
-    #idf.py build
+    idf.py build
     # cd ../
     
-    make USER_C_MODULES=/home/runner/work/upython/upython/micropython-modules/micropython.cmake BOARD=MICROLITE_SPIRAM_CAM
+    # make USER_C_MODULES=/home/runner/work/upython/upython/micropython-modules/micropython.cmake BOARD=MICROLITE_SPIRAM_CAM
     
     #idf.py build USER_C_MODULES=/home/runner/work/upython/upython/micropython-modules/micropython.cmake 
 
